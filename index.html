@@ -54,15 +54,16 @@
     <div id="tile">
     </div>
     <script>
-      const $tile = $("#tile");
-      const dropboxUrl = "https://www.dropbox.com/s/";
       const tiles = [
-        "3bx7v0ebyucwxr4/10s.png?raw=1",
-        "rpl3eihz46nupha/50s.png?raw=1",
-        "wju4y9pticjdxob/55s.png?raw=1",
+        "10s.png",
+        "50s.png",
+        "55s.png",
       ];
 
       const generatePattern = () => {
+        const $tile = $("#tile");
+        $tile.empty();
+
         const nx = $("#nx").val();
         const ny = $("#ny").val();
         const w = $("#w").val();
@@ -72,11 +73,11 @@
         const rC = $("#rC").val();
         const h = w * (53.0 / 11.0);
         const s = w * (3.0 / 11.0);
-        const $tileA = `<img src="${dropboxUrl + tiles[0]}" width="${w}" height="${h}" />`;
-        const $tileB = `<img src="${dropboxUrl + tiles[1]}" width="${w}" height="${h}" />`;
-        const $tileC = `<img src="${dropboxUrl + tiles[2]}" width="${w}" height="${h}" />`;
+        const $tileA = `<img src="${tiles[0]}" width="${w}" height="${h}" />`;
+        const $tileB = `<img src="${tiles[1]}" width="${w}" height="${h}" />`;
+        const $tileC = `<img src="${tiles[2]}" width="${w}" height="${h}" />`;
         const $space = `<div class="space" style="width:${s}px; height: ${h}px;"></div>`;
-        $tile.empty();
+
         let list = [];
         for (let y = 0; y < ny; ++y) {
           let $row = $(`<div class="row" style="max-height: ${h+s}px; width: ${(w+s)*nx}px; background-color: ${mc};"></div>`);
