@@ -64,15 +64,15 @@
         const $tile = $("#tile");
         $tile.empty();
 
-        const nx = $("#nx").val();
-        const ny = $("#ny").val();
-        const w = $("#w").val();
+        const nx = parseInt($("#nx").val());
+        const ny = parseInt($("#ny").val());
+        const w = parseInt($("#w").val());
         const mc = $("#mc").val();
-        const rA = $("#rA").val();
-        const rB = $("#rB").val();
-        const rC = $("#rC").val();
-        const h = w * (53.0 / 11.0);
-        const s = w * (3.0 / 11.0);
+        const rA = parseInt($("#rA").val());
+        const rB = parseInt($("#rB").val());
+        const rC = parseInt($("#rC").val());
+        const h = Math.floor(w * (53.0 / 11.0));
+        const s = Math.floor(w * (3.0 / 11.0));
         const $tileA = `<img src="${tiles[0]}" width="${w}" height="${h}" />`;
         const $tileB = `<img src="${tiles[1]}" width="${w}" height="${h}" />`;
         const $tileC = `<img src="${tiles[2]}" width="${w}" height="${h}" />`;
